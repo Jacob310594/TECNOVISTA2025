@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple MacBook Pro 16" - TecnoVista</title>
+    <!-- Carga de Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        // Configuración de Tailwind CSS
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#0070f3',
+                        'secondary': '#1f2937',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <!-- Enlace a la hoja de estilos externa -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="bg-[#0d1117] text-white">
+
+    <!-- BARRA DE NAVEGACIÓN -->
+    <header class="sticky top-0 z-50 bg-secondary/95 backdrop-blur-sm shadow-xl border-b border-gray-700">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-primary hover:text-white transition duration-200">TecnoVista</a>
+            <div id="nav-links" class="hidden md:flex space-x-6 font-medium">
+                <a href="index.html" class="text-white hover:text-primary transition duration-200">Inicio</a>
+                <a href="sobre.html" class="text-white hover:text-primary transition duration-200">Sobre Nosotros</a>
+                <a href="productos.html" class="text-white hover:text-primary transition duration-200">Productos</a>
+                <a href="galerias.html" class="text-white hover:text-primary transition duration-200">Galerías</a>
+                <a href="contacto.html" class="text-white hover:text-primary transition duration-200">Contacto</a>
+            </div>
+            
+        <div id="mobile-menu" class="hidden md:hidden bg-secondary border-t border-gray-700">
+            <a href="index.html" class="block py-3 px-4 text-center text-white hover:bg-gray-700" onclick="closeMenu()">Inicio</a>
+            <a href="sobre.html" class="block py-3 px-4 text-center text-white hover:bg-gray-700" onclick="closeMenu()">Sobre Nosotros</a>
+            <a href="productos.html" class="block py-3 px-4 text-center text-white hover:bg-gray-700" onclick="closeMenu()">Productos</a>
+            <a href="galerias.html" class="block py-3 px-4 text-center text-white hover:bg-gray-700" onclick="closeMenu()">Galerías</a>
+            <a href="contacto.html" class="block py-3 px-4 text-center text-white hover:bg-gray-700" onclick="closeMenu()">Contacto</a>
+        </div>
+    </header>
+
+    <main>
+        <section id="producto-detalle" class="py-12 md:py-20">
+            <div class="container mx-auto px-4 max-w-6xl">
+                <!-- Grid Principal: Galería y Detalles -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <!-- Columna de la Galería de Imágenes (Nuevo Diseño) -->
+                    <div class="grid grid-cols-5 gap-4">
+                        <!-- Columna de Miniaturas Verticales -->
+                        <div class="col-span-1 flex flex-col gap-2">
+                            <img src="assets/img macbook/vistafrontal.webp" alt="Miniatura 1" class="thumbnail-image w-full h-auto object-cover cursor-pointer rounded-md border-2 border-primary" onclick="changeImage(this, 'assets/img macbook/vistafrontal.webp')">
+                            <img src="assets/img macbook/vistalateral.webp" alt="Miniatura 2" class="thumbnail-image w-full h-auto object-cover cursor-pointer rounded-md border-2 border-transparent hover:border-primary" onclick="changeImage(this, 'assets/img macbook/vistalateral.webp')">
+                            <img src="assets/img macbook/vistateclado.webp" alt="Miniatura 3" class="thumbnail-image w-full h-auto object-cover cursor-pointer rounded-md border-2 border-transparent hover:border-primary" onclick="changeImage(this, 'assets/img macbook/vistateclado.webp')">
+                            <img src="assets/img macbook/M4.webp" alt="Miniatura 4" class="thumbnail-image w-full h-auto object-cover cursor-pointer rounded-md border-2 border-transparent hover:border-primary" onclick="changeImage(this, 'img macbook/M4.webp')">
+                            <img src="assets/img macbook/vistaapple.webp" alt="Miniatura 5" class="thumbnail-image w-full h-auto object-cover cursor-pointer rounded-md border-2 border-transparent hover:border-primary" onclick="changeImage(this, 'assets/img macbook/vistaapple.webp')">
+                            <img src="assets/img macbook/vistapantalla.webp" alt="Miniatura 6" class="thumbnail-image w-full h-auto object-cover cursor-pointer rounded-md border-2 border-transparent hover:border-primary" onclick="changeImage(this, 'assets/img macbook/vistapantalla.webp')">
+                        </div>
+                        <!-- Columna de Imagen Principal -->
+                        <div class="col-span-4">
+                            <img id="main-product-image" src="assets/img macbook/vistafrontal.webp" alt="Vista principal del Apple MacBook Pro 16" class="w-full rounded-lg shadow-lg cursor-pointer lightbox-trigger">
+                        </div>
+                    </div>
+
+                    <!-- Columna de Detalles y Compra -->
+                    <div>
+                        <h1 class="text-3xl md:text-4xl font-bold text-white mb-2">Apple MacBook Pro 16"</h1>
+                        <p class="text-sm text-gray-400 mb-4">Color: Space Black</p>
+                        
+                        <div class="mb-6">
+                            <p class="text-4xl font-bold text-primary mb-2">$3,499.00 USD</p>
+                            <p class="text-sm text-orange-500 font-semibold">✔ Pocas Unidades - Envío Inmediato</p>
+                        </div>
+
+                        <div class="mt-8">
+                            <button onclick="addToCart('Apple MacBook Pro 16&quot;', 3499.00, 'assets/img macbook/vistafrontal.webp')" class="w-full bg-primary text-white font-bold py-4 px-8 rounded-lg text-lg shadow-lg hover:bg-blue-600 transition-all duration-300 transform hover:scale-105 flex items-center justify-center gap-2">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                                Cotizar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sección de Especificaciones Técnicas -->
+                <div class="mt-16 md:mt-24">
+                    <h2 class="text-3xl font-bold text-center mb-8 text-white">Especificaciones Técnicas</h2>
+                    <div class="bg-secondary rounded-lg shadow-xl p-6 md:p-8 max-w-4xl mx-auto border border-gray-700">
+                        <table class="w-full">
+                            <tbody>
+                                <tr class="border-b border-gray-700"><td class="py-3 pr-4 font-semibold text-gray-400">Chip</td><td class="py-3 text-gray-200">Chip M3 Max de Apple (CPU de 14 núcleos, GPU de 30 núcleos, Neural Engine de 16 núcleos)</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-3 pr-4 font-semibold text-gray-400">Memoria Unificada</td><td class="py-3 text-gray-200">36GB</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-3 pr-4 font-semibold text-gray-400">Almacenamiento</td><td class="py-3 text-gray-200">1TB SSD</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-3 pr-4 font-semibold text-gray-400">Pantalla</td><td class="py-3 text-gray-200">16.2" Liquid Retina XDR (3456 x 2234) con ProMotion</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-3 pr-4 font-semibold text-gray-400">Sistema Operativo</td><td class="py-3 text-gray-200">macOS</td></tr>
+                                <tr class="border-b border-gray-700"><td class="py-3 pr-4 font-semibold text-gray-400">Teclado</td><td class="py-3 text-gray-200">Magic Keyboard retroiluminado con Touch ID, Español</td></tr>
+                                <tr><td class="py-3 pr-4 font-semibold text-gray-400">Color</td><td class="py-3 text-gray-200">Space Black (Negro espacial)</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Estructura del Lightbox (Oculto por defecto) -->
+    <div id="lightbox-overlay" class="fixed inset-0 bg-black/90 flex items-center justify-center z-[100] hidden">
+        <span id="lightbox-close" class="absolute top-5 right-8 text-white text-5xl font-bold cursor-pointer hover:text-primary transition-colors">&times;</span>
+        <img id="lightbox-img" src="" alt="Vista ampliada de la imagen" class="max-w-[90vw] max-h-[85vh] object-contain rounded-lg shadow-2xl">
+    </div>
+
+    <!-- PANEL DEL CARRITO DE COMPRAS -->
+    <div id="cart-panel" class="fixed top-0 right-0 h-full w-full md:w-96 bg-secondary shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out z-[100]">
+        <div class="flex flex-col h-full">
+            <!-- Cabecera del Carrito -->
+            <div class="flex justify-between items-center p-4 border-b border-gray-700">
+                <h2 class="text-xl font-bold text-white">Carrito de Cotización</h2>
+                <button id="close-cart-btn" class="text-gray-400 hover:text-white transition-colors">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Items del Carrito -->
+            <div id="cart-items" class="flex-grow p-4 overflow-y-auto">
+                <!-- Los productos agregados aparecerán aquí -->
+            </div>
+
+            <!-- Resumen y Botón de Finalizar -->
+            <div class="p-4 border-t border-gray-700">
+                <div class="flex justify-between items-center mb-4">
+                    <span class="text-lg font-semibold text-white">Subtotal:</span>
+                    <span id="cart-subtotal" class="text-2xl font-bold text-primary">$0.00</span>
+                </div>
+                <a href="contacto.html" id="checkout-link" class="block text-center w-full bg-primary text-white font-bold py-3 px-6 rounded-lg text-lg shadow-lg hover:bg-blue-600 transition-all duration-300">Finalizar Cotización</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Notificación "Añadido al Carrito" (Toast) -->
+    <div id="toast-notification" class="fixed bottom-5 right-5 bg-green-600 text-white py-3 px-5 rounded-lg shadow-xl text-center transform translate-y-20 opacity-0 transition-all duration-300 ease-in-out z-[150]"></div>
+
+    <!-- FOOTER -->
+    <footer class="bg-secondary py-8 border-t border-gray-700">
+        <div class="container mx-auto px-4 text-center text-gray-500">
+            <p>&copy; 2025 TecnoVista. Todos los derechos reservados.</p>
+            <p class="text-sm mt-2">Venta de equipos de cómputo multimarca.</p>
+        </div>
+    </footer>
+
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
